@@ -16,39 +16,41 @@
 
 </head>
 <body>
-    <div class="container">
-        <div class="profil_info">
-            <div class="image">
-                <img class="img_profil" src="./assets/images/profilePhoto.png" alt="profil photo">
-            </div>
-            <div class="name">
-                Rodney Cotton
-            </div>
-            <div class="location">Helsinki, Finland</div>
-        </div>
-        <div class="number_info">
-            <div class="number_posts"><span class="number_posts_x">100</span>posts</div>
-            <div class="number_followers"><span class="number_posts_x">2,409</span>Followers</div>
-            <div class="number_following"><span class="number_posts_x">104</span>Following</div>
-        </div>
-
-        <div class="picture_content">
-            <div class="bloc_one">
-                <img class="img_1" src="./assets/images/photo1.png" alt="living room">
-                <img class="img_2" src="./assets/images/photo2.png" alt="living room 2">
-            </div>
-            <div class="bloc_two">
-                <div class="bloc-left">
-                    <div class="row-1">
-                        <img class="img_3" src="./assets/images/photo3.png" alt="Image 3 - Bath">
-                    </div>
-                    <div class="row-2">
-                        <img class="img_5" src="./assets/images/photo5.png" alt="Image 5 - Plant">
-                        <img class="img_6" src="./assets/images/photo6.png" alt="Image 6 - Home decor">
-                    </div>
+    <div id="app">
+        <div class="container">
+            <div class="profil_info">
+                <div class="image">
+                    <img class="img_profil" :src="profil.img" alt="profil photo">
                 </div>
-                <div class="bloc-right">
-                        <img class="img_4" src="./assets/images/photo_4.png" alt="Image 4 - Light">
+                <div class="name">
+                    {{profil.name}}
+                </div>
+                <div class="location">{{profil.city}}, {{profil.country}}</div>
+            </div>
+            <div class="number_info">
+                <div class="number_posts"><span class="number_posts_x">{{profil.posts}}</span>posts</div>
+                <div class="number_followers"><span class="number_posts_x">{{profil.followers}}</span>Followers</div>
+                <div class="number_following"><span class="number_posts_x">{{profil.following}}</span>Following</div>
+            </div>
+    
+            <div class="picture_content">
+                <div class="bloc_one">
+                    <img class="img_1" src="./assets/images/photo1.png" alt="living room">
+                    <img class="img_2" src="./assets/images/photo2.png" alt="living room 2">
+                </div>
+                <div class="bloc_two">
+                    <div class="bloc-left">
+                        <div class="row-1">
+                            <img class="img_3" src="./assets/images/photo3.png" alt="Image 3 - Bath">
+                        </div>
+                        <div class="row-2">
+                            <img class="img_5" src="./assets/images/photo5.png" alt="Image 5 - Plant">
+                            <img class="img_6" src="./assets/images/photo6.png" alt="Image 6 - Home decor">
+                        </div>
+                    </div>
+                    <div class="bloc-right">
+                            <img class="img_4" src="./assets/images/photo_4.png" alt="Image 4 - Light">
+                    </div>
                 </div>
             </div>
         </div>
@@ -170,5 +172,20 @@
             width: 90%;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data:{
+                profil:{
+                    img:"./assets/images/profilePhoto.png",
+                    name:"Rodney Cotton",
+                    city:"Helsinki",country:"Finland",
+                    posts:"100",
+                    followers:"2,409",
+                    following:"104"},
+            }
+        })
+    </script>
 </body>
 </html>
